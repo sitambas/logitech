@@ -1,14 +1,14 @@
 export const initialState = {
     products: [],
-    count:0
+    carts:[]
   };
   
   export const reducer = (state, action) => {
     switch (action.type) {
       case 'SET_PRODUCTS':
         return { ...state, products: action.payload };
-      case 'SET_COUNT':
-        return { ...state, count: action.payload };
+      case 'SET_CART_ITEM':
+        return { ...state, carts: action.payload };
       case 'REMOVE_FROM_PRODUCTS':
         return {
           ...state,
