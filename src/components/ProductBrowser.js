@@ -11,7 +11,6 @@ const ProductBrowser = ({productsData=[],removeProduct,resetData,cart={}}) => {
   const [products,setProducts] = useState(productsData || []);
   const [selectedProductIndex, setSelectedProductIndex] = useState(0);
 
-
   const handleTabClick = (index) => {
     setSelectedProductIndex(index);
   };
@@ -32,7 +31,7 @@ const ProductBrowser = ({productsData=[],removeProduct,resetData,cart={}}) => {
                     <Tabs products={products} handleTabClick={handleTabClick} setSelectedProductIndex={setSelectedProductIndex} selectedProductIndex={selectedProductIndex}/>
                 </div>
             </div>
-            {products.length > 0 ? <ProductList products={isMobile ? products : [products[selectedProductIndex]]} onRemove={removeProduct} />: <Shimmer/>}
+            {products.length > 0 ? <ProductList products={isMobile ? products : [products[selectedProductIndex]]} onRemove={removeProduct} setSelectedProductIndex={setSelectedProductIndex} selectedProductIndex={selectedProductIndex}/>: <Shimmer/>}
         </div>
         <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
         <CustomButton classes="mt-4 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300" text={'Reset'} onClick={resetData}/>
