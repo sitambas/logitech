@@ -28,6 +28,7 @@ const Tabs = ({ products, handleTabClick, setSelectedProductIndex, selectedProdu
         <CustomButton
           classes="text-lg bg-gray-200 px-4 py-2 rounded-lg"
           text={'<'}
+          ariaLabel="Previous product"
           onClick={scrollToPrevious}
         />
       )}
@@ -38,6 +39,8 @@ const Tabs = ({ products, handleTabClick, setSelectedProductIndex, selectedProdu
           {products.map((product, index) => (
             <CustomButton
               key={index}
+              ariaLabel={`Tab-product-panel-${index}`}
+              id={`product-tab-${index}`}
               classes={`px-4 py-2 rounded-lg ${
                 selectedProductIndex === index
                   ? 'bg-gray-200 text-gray-800 border border-slate-800'
@@ -54,6 +57,7 @@ const Tabs = ({ products, handleTabClick, setSelectedProductIndex, selectedProdu
         <CustomButton
           classes="text-lg bg-gray-200 px-4 py-2 rounded-lg"
           text={'>'}
+          ariaLabel="Next product"
           onClick={scrollToNext}
         />
       )}

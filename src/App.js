@@ -42,11 +42,12 @@ function App() {
   const resetData = useCallback(() => {
     getProducts();
   }, []);
+  
 
   return (
     <div className="App">
         <div className="min-h-screen bg-gray-50">
-          <ProductBrowser productsData={state?.products} cart={state?.carts} removeProduct={removeProduct} resetData={resetData} />
+          <ProductBrowser productsData={state?.products} cart={state?.carts} removeProduct={removeProduct} resetData={resetData}  />
         </div>
     </div>
   );

@@ -13,7 +13,7 @@ const Shimmer =()=>{
             </div>
             <div className="flex ">
                 <div className="md:mr-60 h-2 bg-slate-200 py-4 align-left rounded max-w-36 w-full"></div>
-                <div className="ml-80 h-2 py-4 bg-slate-200 align-right rounded max-w-36 w-full"></div>
+                <div className="ml-40 md:ml-80 h-2 py-4 bg-slate-200 align-right rounded max-w-36 w-full"></div>
             </div>
 
         </div>
