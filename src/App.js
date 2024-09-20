@@ -4,7 +4,10 @@ import ProductBrowser from './components/ProductBrowser';
 import { initialState, reducer } from './store/reducer';
 
 function App() {
+  // useReducer to manage for the products and cart
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // Fetches product data from the API and updates the state using dispatch
   const getProducts = async () => {
     try {
       const products = await fetchProducts();
@@ -13,6 +16,7 @@ function App() {
       console.error("Failed to fetch products:", error);
     }
   };
+  // Fetches Cart data from the API and updates the state using dispatch
   const getCart = async () => {
     try {
       const products = await fetchCart();
@@ -27,6 +31,7 @@ function App() {
     getCart();
   }, []);
 
+  // Removes a product from the products list based on the product id
   const removeProduct = useCallback((product) => {
     dispatch({
       type: 'SET_PRODUCTS',
