@@ -34,7 +34,7 @@ const Tabs = ({ products, handleTabClick, setSelectedProductIndex, selectedProdu
       )}
       
 
-      <div className="flex-grow overflow-x-auto overscroll-x-none" ref={scrollableRef}>
+      <div className="flex-grow overflow-x-auto overscroll-x-none no-scrollbar" ref={scrollableRef}>
         <div className="flex justify-center space-x-2" style={{ width: 'max-content' }}>
           {products.map((product, index) => (
             <CustomButton

@@ -25,7 +25,7 @@ function App() {
       console.error("Failed to fetch products:", error);
     }
   };
-  
+  // Fetch products and CartData on component mount
   useEffect(() => {
     getProducts();
     getCart();
@@ -39,6 +39,7 @@ function App() {
     });
   }, [state?.products]);
 
+  // Function to reset product data
   const resetData = useCallback(() => {
     getProducts();
   }, []);
